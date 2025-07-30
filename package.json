@@ -1,0 +1,36 @@
+{
+  "name": "digital-wallet-api",
+  "version": "1.0.0",
+  "description": "Design and build a secure, modular, and role-based backend API for a digital wallet system (similar to Bkash or Nagad) using Express.js and Mongoose.",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devhasanmia/digital-wallet-api.git"
+  },
+  "keywords": [
+    "digital-wallet-api",
+    "md",
+    "hasan",
+    "mia"
+  ],
+  "author": "MD. HASAN MIA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devhasanmia/digital-wallet-api/issues"
+  },
+  "homepage": "https://github.com/devhasanmia/digital-wallet-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "ts-node-dev": "^2.0.0"
+  }
+}
