@@ -26,7 +26,7 @@ export interface IConfig {
 const config: IConfig = {
   app: {
     port: process.env.PORT || 5000,
-    env: process.env.NODE_ENV || "development",
+    env: process.env.NODE_ENV || "production",
   },
   jwt: {
     secret: process.env.JWT_SECRET || "",

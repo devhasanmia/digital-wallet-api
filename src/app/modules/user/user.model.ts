@@ -25,11 +25,6 @@ const userSchema = new Schema<IUser>({
         enum: ['user', 'agent', 'admin'],
         required: true
     },
-    // wallet: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Wallet',
-    //     required: true
-    // },
     approvalStatus: {
         type: String,
         enum: ['pending', 'approved', 'rejected'],

@@ -11,7 +11,6 @@ export interface IAuthUser {
 const profile = async (authenticatedUser: IAuthUser) => {
     try {
         const result = User.findById(authenticatedUser._id).select('-password')
-
         return result
     } catch (error) {
         throw error;
