@@ -15,6 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+app.use('/api/v1', router)
+
+
 app.get("/", (req: Request, res: Response) => {
   const html = `
   <!DOCTYPE html>
@@ -124,15 +127,11 @@ app.get("/", (req: Request, res: Response) => {
       <footer>
           &copy; ${new Date().getFullYear()} Digital Wallet API — Developed by MD. HASAN MIA
       </footer>
-  </body>
-  </html>
-  `;
+      </body>
+      </html>
+      `;
   res.send(html);
 });
-
-
-app.use('/api/v1', router)
 app.use(globalErrorHandler)
-app.use(notFound)
-
+app.use(notFound);
 export default app

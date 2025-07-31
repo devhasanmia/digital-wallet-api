@@ -31,7 +31,8 @@ const userSchema = new Schema<IUser>({
     // },
     approvalStatus: {
         type: String,
-        enum: ['pending', 'approved', 'rejected']
+        enum: ['pending', 'approved', 'rejected'],
+        default: 'approved'
     },
     isBlocked: {
         type: Boolean,
@@ -39,6 +40,7 @@ const userSchema = new Schema<IUser>({
     },
 }, {
     timestamps: true,
+    versionKey: false
 });
 
 const User = model<IUser>("User", userSchema);
