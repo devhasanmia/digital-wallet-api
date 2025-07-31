@@ -6,11 +6,12 @@ import User from "../modules/user/user.model";
 import httpStatus from "http-status-codes"
 import AppError from "../errorHelpers/AppError";
 
-export const createUserToken = (user: Partial<IUser>) => {
+export const createUserToken = (user: IUser & { _id: string }) => {
     const jwtPayload = {
+        _id: user._id,
         email: user.email,
-        phone: user.name,
-        role: user.role
+        phone: user.phone,
+        role: user.role,
     };
     const accessToken = generateToken(
         jwtPayload as JwtPayload,
@@ -34,7 +35,6 @@ export const refreshAccessToken = async (refreshToken: string) => {
         config.jwt.refresh_secret
     ) as JwtPayload;
     const isUserExist = await User.findOne({ email: varifiedToken.email });
-
     if (!isUserExist) {
         throw new AppError(httpStatus.BAD_REQUEST, "User does Not Exist");
     }

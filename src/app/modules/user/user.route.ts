@@ -1,9 +1,9 @@
 import express from "express";
 import { UserController } from "./user.controller";
+import { checkAuth } from "../../middlewares/checkAuth";
 const router = express.Router();
 
-router.post("/register", UserController.register);
-router.post("/login", UserController.login);
-router.post("/logout", UserController.logout);
+router.get("/profile", checkAuth('admin', 'user', 'agent'),UserController.profile);
+
 
 export const UserRoutes = router;
