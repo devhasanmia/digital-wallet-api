@@ -10,7 +10,7 @@ export interface IUser {
     phone: string;
     password: string;
     role: Role;
-    wallet: Types.ObjectId
+    // wallet: Types.ObjectId
     approvalStatus?: ApprovalStatus;
     isBlocked: boolean;
 }
