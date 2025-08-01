@@ -1,13 +1,9 @@
-// src/modules/transaction/transaction.model.ts
-
 import { Schema, model } from "mongoose";
-
-
 const transactionSchema = new Schema(
     {
         type: {
             type: String,
-            enum: ["send_money", "withdraw", "cash_in", "cash_out", "top_up"],
+            enum: ["send_money", "withdraw", "cash_in", "cash_out", "add-money"],
             required: true,
         },
         amount: {

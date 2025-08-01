@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 
-export type TTransactionType = "send_money" | "withdraw" | "cash_in" | "cash_out" | "top_up";
+export type TTransactionType = "send_money" | "withdraw" | "cash_in" | "cash_out" | "add-money";
 export type TTransactionStatus = "success" | "failed" | "reversed";
 
 export interface ITransaction {

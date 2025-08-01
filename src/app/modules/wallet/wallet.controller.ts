@@ -25,9 +25,62 @@ const SendMoney = catchAsync(async (req: Request, res: Response, next: NextFunct
         data,
     });
 })
+const getMyTransactions = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const authenticatedUser = req.user;
+    const data = await WalletService.getMyTransactions(authenticatedUser as IAuthUser)
+    sendResponse(res, {
+        statusCode: 200,
+        success: true,
+        message: "Wallet fetched successfully",
+        data,
+    });
+})
+
+const addMoneyToWallet = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const authenticatedUser = req.user;
+    const data = await WalletService.addMoneyToWallet(req.body, authenticatedUser as IAuthUser)
+    sendResponse(res, {
+        statusCode: 200,
+        success: true,
+        message: "Money has been successfully added to your wallet.",
+        data,
+    });
+})
+
+const withdrawToAgent = catchAsync(
+    async (req: Request, res: Response, next: NextFunction) => {
+        const authenticatedUser = req.user as IAuthUser;
+        const result = await WalletService.withdrawToAgent(req.body, authenticatedUser);
+        sendResponse(res, {
+            statusCode: 200,
+            success: true,
+            message: `৳${req.body.amount} withdrawn to agent ${req.body.agentPhone} successfully.`,
+            data:result,
+        });
+    }
+);
+
+const agentCashIn = catchAsync(
+    async (req: Request, res: Response, next: NextFunction) => {
+        const authenticatedUser = req.user as IAuthUser;
+        const result = await WalletService.withdrawToAgent(req.body, authenticatedUser);
+        sendResponse(res, {
+            statusCode: 200,
+            success: true,
+            message: `৳${req.body.amount} withdrawn to agent ${req.body.agentPhone} successfully.`,
+            data:result,
+        });
+    }
+);
+
+
 
 
 export const walletController = {
     wallet,
-    SendMoney
+    SendMoney,
+    getMyTransactions,
+    addMoneyToWallet,
+    withdrawToAgent,
+    agentCashIn
 }

@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get("/", checkAuth('admin', 'user', 'agent'), walletController.wallet);
 router.post("/send-money", checkAuth('user'), walletController.SendMoney);
+router.post("/withdraw", checkAuth('user'), walletController.withdrawToAgent);
+
 
 
 export const WalletRoutes = router;

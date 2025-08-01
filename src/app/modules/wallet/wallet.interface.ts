@@ -12,3 +12,9 @@ export interface ISendMoneyPayload {
     amount: number;
     note: string
 }
+
+export interface IWithdrawToAgentPayload {
+  agentPhone: string;
+  amount: number;
+  note?: string;
+}
