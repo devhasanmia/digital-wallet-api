@@ -6,3 +6,9 @@ export interface IWallet {
     balance: number;
     isBlocked: boolean;
 }
+
+export interface ISendMoneyPayload {
+    receiverPhone: string;
+    amount: number;
+    note: string
+}

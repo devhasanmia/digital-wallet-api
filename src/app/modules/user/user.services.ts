@@ -1,12 +1,6 @@
+import { IAuthUser } from "../../interfaces/auth.interface";
 import User from "./user.model";
-export interface IAuthUser {
-    _id: string
-    email: string
-    phone: string
-    role: string
-    iat: number
-    exp: number
-}
+
 
 const profile = async (authenticatedUser: IAuthUser) => {
     try {
