@@ -18,10 +18,21 @@ export interface IJwtConfig {
 export interface IBcryptConfig {
   salt_rounds: number;
 }
+
+export interface ISeedAdmin {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  role: 'admin';
+}
+
+
 export interface IConfig {
   app: IAppConfig;
   database: IDatabaseConfig;
-  jwt: IJwtConfig
+  jwt: IJwtConfig;
+  seed_admin: ISeedAdmin;
 }
 const config: IConfig = {
   app: {
@@ -36,6 +47,13 @@ const config: IConfig = {
   },
   database: {
     uri: process.env.DATABASE || "",
+  },
+  seed_admin: {
+    name: process.env.ADMIN_NAME || "Super Admin",
+    email: process.env.ADMIN_EMAIL || "admin@example.com",
+    phone: process.env.ADMIN_PHONE || "01700000000",
+    password: process.env.ADMIN_PASSWORD || "admin1234",
+    role: "admin",
   },
 };
 

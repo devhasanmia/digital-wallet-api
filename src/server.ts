@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import app from "./app";
 import config from "./app/config";
+import { seedAdmin } from "./app/utils/seedAdmin";
 
 const PORT = config.app.port
 let server: ReturnType<typeof app.listen> | null = null;
@@ -20,6 +21,7 @@ async function main() {
         server = app.listen(PORT, () => {
             console.log(`🚀 Server is running on http://localhost:${PORT}`);
         });
+        seedAdmin()
     } catch (error) {
         console.error("❌ Failed to start server:", error);
         process.exit(1);
@@ -62,4 +64,5 @@ process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
 main();
+
 

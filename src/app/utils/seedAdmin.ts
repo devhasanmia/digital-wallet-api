@@ -1,33 +1,21 @@
+import config from "../config";
+import { IUser } from "../modules/user/user.interface";
 import User from "../modules/user/user.model";
-
-export const seedSuperAdmin = async () => {
+import bcrypt from "bcrypt"
+export const seedAdmin = async () => {
     try {
-
-        const adminPaylod = {
-            name: "MD. HASAN MIA",
-            email: "hasanmiaweb@gmail.com"
-        }
-
-
-
-        const isSuperAdminExist = await User.findOne({ email: config.superAdmin.email });
+        const isSuperAdminExist = await User.findOne({ email: config.seed_admin.email });
         if (isSuperAdminExist) {
             return
         }
-        const authProvider: IAuthProvider = {
-            provider: "credentials",
-            providerid: config.superAdmin.email
-        }
-    const hashPassword = await bcrypt.hash(config.superAdmin.password as string, config.bcrypt.salt_rounds);
-      
+        const hashPassword = await bcrypt.hash(config.seed_admin.password as string, 10);
         const payload: IUser = {
-            name: config.superAdmin.name,
-            email: config.superAdmin.email,
+            name: config.seed_admin.name,
+            email: config.seed_admin.email,
+            phone: config.seed_admin.phone,
             password: hashPassword,
-            isActive: IsActive.ACTIVE,
-            isVerified: true,
-            role: Role.SUPER_ADMIN,
-            auths: [authProvider],
+            role: config.seed_admin.role,
+            isBlocked: false
         }
         const superAdmin = await User.create(payload)
         console.log("Super Admin Created Successfull");
