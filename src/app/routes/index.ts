@@ -4,6 +4,7 @@ import { UserRoutes } from "../modules/user/user.route"
 import { WalletRoutes } from "../modules/wallet/wallet.route"
 import { TransactionRoutes } from "../modules/transactions/transactions.route"
 import { AgentRoutes } from "../modules/agent/agent.route"
+import { AdminRoutes } from "../modules/admin/admin.route"
 export const router = Router()
 
 const apiRoutes = [
@@ -26,6 +27,10 @@ const apiRoutes = [
     {
         path: "/agent",
         route: AgentRoutes
+    },
+    {
+        path: "/admin",
+        route: AdminRoutes
     }
 ]
 
