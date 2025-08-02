@@ -41,7 +41,7 @@ const config: IConfig = {
   },
   jwt: {
     secret: process.env.JWT_SECRET || "",
-    expires_in: process.env.JWT_EXPIRES_IN || "5h",
+    expires_in: process.env.JWT_EXPIRES_IN || "1d",
     refresh_secret: process.env.JWT_REFRESH_SECRET || "",
     refresh_expires_in: process.env.JWT_REFRESH_EXPIRES_IN || "30d",
   },
@@ -54,7 +54,7 @@ const config: IConfig = {
     phone: process.env.ADMIN_PHONE || "01700000000",
     password: process.env.ADMIN_PASSWORD || "admin1234",
     role: "admin",
-  },
+  }
 };
 
 export default config;
