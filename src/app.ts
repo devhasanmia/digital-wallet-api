@@ -85,23 +85,32 @@ app.get("/", (req: Request, res: Response) => {
           <ul>
               <li><code>POST /api/v1/auth/register</code> — Register new user/agent</li>
               <li><code>POST /api/v1/auth/login</code> — Login and get JWT token</li>
+              <li><code>POST /api/v1/auth/logout</code> — Logout user</li>
           </ul>
 
           <h2>👤 User Routes</h2>
           <ul>
-              <li><code>GET /api/v1/user/profile</code> — Get own profile</li>
-              <li><code>GET /api/v1/wallet</code> — View wallet balance</li>
-              <li><code>POST /api/v1/wallet/top-up</code> — Add money to own wallet</li>
+                            <li><code>GET /api/v1/user/profile</code> — Get own profile (accessible by <strong>admin, user, agent</strong>)</li>
+          </ul>
+
+          <h2>💼 Wallet Routes</h2>
+          <ul>
+              <li><code>GET /api/v1/wallet/</code> — View wallet balance</li>
+              <li><code>POST /api/v1/wallet/send-money</code> — Send money to another user</li>
               <li><code>POST /api/v1/wallet/withdraw</code> — Withdraw money</li>
-              <li><code>POST /api/v1/wallet/send</code> — Send money to another user</li>
-              <li><code>GET /api/v1/transactions/me</code> — Transaction history</li>
+          </ul>
+
+          <h2>📜 Transaction Routes</h2>
+          <ul>
+              <li><code>GET /api/v1/transactions/me</code> — View own transaction history</li>
+              <li><code>POST /api/v1/wallet/add-money</code> — Add money to own wallet</li>
           </ul>
 
           <h2>🧑‍💼 Agent Routes</h2>
           <ul>
               <li><code>POST /api/v1/agent/cash-in</code> — Add money to user (cash-in)</li>
-              <li><code>POST /api/v1/agent/cash-out</code> — Withdraw money from user (cash-out)</li>
-              <li><code>GET /api/v1/agent/commissions</code> — View commission history (optional)</li>
+              <li><code>POST /api/v1/agent/withdraw</code> — Withdraw money from user (cash-out)</li>
+              <!-- Optional: <li><code>GET /api/v1/agent/commissions</code> — View commission history</li> -->
           </ul>
 
           <h2>🛠️ Admin Routes</h2>
@@ -109,29 +118,23 @@ app.get("/", (req: Request, res: Response) => {
               <li><code>GET /api/v1/admin/users</code> — View all users</li>
               <li><code>GET /api/v1/admin/agents</code> — View all agents</li>
               <li><code>GET /api/v1/admin/wallets</code> — View all wallets</li>
-              <li><code>PATCH /api/v1/admin/wallet/block/:id</code> — Block a wallet</li>
-              <li><code>PATCH /api/v1/admin/wallet/unblock/:id</code> — Unblock a wallet</li>
-              <li><code>PATCH /api/v1/admin/agent/approve/:id</code> — Approve agent</li>
-              <li><code>PATCH /api/v1/admin/agent/suspend/:id</code> — Suspend agent</li>
-              <li><code>PATCH /api/v1/admin/settings</code> — Set transaction fee (optional)</li>
+              <li><code>PATCH /api/v1/admin/wallets/:walletId/block</code> — Block or unblock a wallet (body: { block: true/false })</li>
+              <li><code>PATCH /api/v1/admin/agents/:agentId</code> — Approve or suspend agent (body: { status: "approved" | "rejected" })</li>
+              <li><code>GET /api/v1/admin/transactions</code> — View all transactions</li>
           </ul>
 
-          <h2>📘 Docs & Testing</h2>
-          <ul>
-              <li>Postman Collection: <code>./postman_collection.json</code></li>
-              <li>README.md: Setup, usage, all endpoints</li>
-              <li>Video: Demo with explanation (max 10 min)</li>
-          </ul>
+          
       </div>
 
       <footer>
           &copy; ${new Date().getFullYear()} Digital Wallet API — Developed by MD. HASAN MIA
       </footer>
-      </body>
-      </html>
-      `;
+  </body>
+  </html>
+  `;
   res.send(html);
 });
+
 app.use(globalErrorHandler)
 app.use(notFound);
 export default app

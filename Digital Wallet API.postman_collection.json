@@ -1,0 +1,708 @@
+{
+	"info": {
+		"_postman_id": "04b138f4-dcfa-4047-94f6-5f180946bfca",
+		"name": "Digital Wallet API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33316573",
+		"_collection_link": "https://md-hasan-mia.postman.co/workspace/Digital-Wallet-API~da2728ca-83d4-4362-b6b6-c11f79a0451f/collection/33316573-04b138f4-dcfa-4047-94f6-5f180946bfca?action=share&source=collection_link&creator=33316573"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sobuj\",\r\n    \"phone\": \"0184033389\",\r\n    \"email\": \"sdf৥ুাি\",\r\n    \"password\": \"1235\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "Cash In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzc1MTIsImV4cCI6MTc1NDA0NDcxMn0.LSzrwUSYf6dmapBQ2yiWQC3Y7QdqPs0rhdGdEDUdGZY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverPhone\":\"01745895685\",\r\n    \"amount\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/agent/cash-in",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"agent",
+								"cash-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzc1MTIsImV4cCI6MTc1NDA0NDcxMn0.LSzrwUSYf6dmapBQ2yiWQC3Y7QdqPs0rhdGdEDUdGZY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverPhone\":\"01745895685\",\r\n    \"amount\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/agent/cash-in",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"agent",
+								"cash-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhiNDA0ZDJkM2ZmNWM1MGE2MjRiZWIiLCJlbWFpbCI6Imhhc2FuQGV4YW1wbGUuY29tIiwicGhvbmUiOiIwMTc0MDM5ODE5NiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUzOTc4MzUyLCJleHAiOjE3NTM5ODU1NTJ9.Paiq2LO_gp5fTILF6x8aa0KhwrqXtiKz4J5jCyrl7wo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hasan Mia\",\r\n    \"email\": \"hasan@example.com\",\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhiNDA0ZDJkM2ZmNWM1MGE2MjRiZWIiLCJlbWFpbCI6Imhhc2FuQGV4YW1wbGUuY29tIiwicGhvbmUiOiIwMTc0MDM5ODE5NiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUzOTc4MzUyLCJleHAiOjE3NTM5ODU1NTJ9.Paiq2LO_gp5fTILF6x8aa0KhwrqXtiKz4J5jCyrl7wo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hasan Mia\",\r\n    \"email\": \"hasan@example.com\",\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/user/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agents",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hasan Mia\",\r\n    \"email\": \"hasan@example.com\",\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/agents",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"agents"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agent Status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"approvalStatus\":\"approved\" // rejected\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/agents/688d7b0544c07d4a632fdc50",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"agents",
+								"688d7b0544c07d4a632fdc50"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wallets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"approvalStatus\":\"approved\" // rejected\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/wallets",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"wallets"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ToggleWalletBlock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"block\":false // true or false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/wallets/688d7b0544c07d4a632fdc52/block",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"wallets",
+								"688d7b0544c07d4a632fdc52",
+								"block"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"block\":false // true or false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/transactions",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Wallet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzg2OTgsImV4cCI6MTc1NDA0NTg5OH0.XRjGUehObiyOQRpfp4wGN1sZDKSq91aZ6AmTUhQ5_xs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hasan Mia\",\r\n    \"email\": \"hasan@example.com\",\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/wallet",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"wallet"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Money (Top-Up)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAzNTYzMCwiZXhwIjoxNzU0MDQyODMwfQ.F6mChYNmv_y2TnERkvJYhlSd7BdlxSrmWRrG0QMogH8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/transactions/add-money",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"transactions",
+								"add-money"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Mony",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAxNDQxNiwiZXhwIjoxNzU0MDIxNjE2fQ.C7APyrptIHSIkS0ulR-YHQLmir_vORkVKPZzURscMUY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverPhone\": \"01745895685\",\r\n    \"amount\": 5,\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/wallet/send-money",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"wallet",
+								"send-money"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAzNTYzMCwiZXhwIjoxNzU0MDQyODMwfQ.F6mChYNmv_y2TnERkvJYhlSd7BdlxSrmWRrG0QMogH8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/wallet/withdraw",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"wallet",
+								"withdraw"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Wallet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAxNDQxNiwiZXhwIjoxNzU0MDIxNjE2fQ.C7APyrptIHSIkS0ulR-YHQLmir_vORkVKPZzURscMUY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/wallet/me",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"wallet",
+								"me"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzYxMTYsImV4cCI6MTc1NDA0MzMxNn0.vBADg0GBwfNdFwy-svS9i3J4m2T_YAJcV_8ValH5tE4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hasan Mia\",\r\n    \"email\": \"hasan@example.com\",\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/transactions/me",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"transactions",
+								"me"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
