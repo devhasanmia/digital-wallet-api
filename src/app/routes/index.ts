@@ -12,6 +12,7 @@ const apiRoutes = [
         path: "/auth",
         route: AuthRoutes
     },
+    
     {
         path: "/user",
         route: UserRoutes
