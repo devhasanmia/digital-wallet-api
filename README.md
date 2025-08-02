@@ -1,10 +1,10 @@
-# 💳 Digital Wallet API
+#  Digital Wallet API
 
 A secure, role-based RESTful API for digital wallet operations, built with **Node.js**, **Express.js**, **MongoDB**, and **TypeScript**.
 
 ---
 
-## 📦 Features
+## Features
 
 - 🔐 User, Agent, Admin roles with RBAC
 - 💼 Wallet operations: Add, Send, Withdraw
