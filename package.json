@@ -4,7 +4,8 @@
   "description": "Design and build a secure, modular, and role-based backend API for a digital wallet system (similar to Bkash or Nagad) using Express.js and Mongoose.",
   "main": "server.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
