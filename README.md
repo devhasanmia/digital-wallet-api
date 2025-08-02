@@ -144,33 +144,13 @@ Authorization: <access_token>
 A sample collection is available in:
 
 ```
-postman_collection.json
+Digital Wallet API.postman_collection.json
+Digital Wallet API.postman_environment.json
 ```
 
 Import into Postman to test all routes easily.
 
 ---
-
-## 📽️ Demo (Optional)
-
-If needed, include a 5–10 minute recorded video showing:
-
-- Register/login flow
-- Wallet operations
-- Agent transactions
-- Admin controls
-
----
-
-## 🧑‍💻 Author
-
-**MD. HASAN MIA**  
-📧 Email: your.email@example.com  
-🌐 GitHub: [@yourusername](https://github.com/yourusername)
-
----
-
-## 📄 License
 
 This project is licensed under the **MIT License**.
 
