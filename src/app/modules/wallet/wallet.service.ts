@@ -105,23 +105,8 @@ const addMoneyToWallet = async (
     authenticatedUser: IAuthUser
 ) => {
     const { amount, note } = payload;
-
-    if (
-        amount === undefined ||
-        amount === null ||
-        isNaN(amount) ||
-        typeof amount !== "number" ||
-        amount <= 0
-    ) {
-        throw new AppError(httpStatus.BAD_REQUEST, "Amount is required and must be a positive number");
-    }
-    if (amount <= 0) {
-        throw new AppError(httpStatus.BAD_REQUEST, "Amount must be greater than 0");
-    }
-
     const session = await mongoose.startSession();
     session.startTransaction();
-
     try {
         const wallet = await Wallet.findOne({ user: authenticatedUser._id }).session(session);
         if (!wallet) {

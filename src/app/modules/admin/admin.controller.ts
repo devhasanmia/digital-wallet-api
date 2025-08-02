@@ -57,7 +57,10 @@ const toggleWalletBlock = catchAsync(
     const { walletId } = req.params;
     const { block } = req.body;
     if (typeof block !== "boolean") {
-      throw new AppError(400, "Invalid value for 'block'. Allowed value: true or false");
+      throw new AppError(
+        400,
+        "'block' field is required and must be a boolean (true or false)"
+      );
     }
     const result = await AdminServices.toggleWalletBlock(walletId, block);
     sendResponse(res, {
@@ -68,6 +71,7 @@ const toggleWalletBlock = catchAsync(
     });
   }
 );
+
 
 
 const updateAgentStatus = catchAsync(

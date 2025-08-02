@@ -1,31 +1,22 @@
 import mongoose from "mongoose";
 import AppError from "../../errorHelpers/AppError";
 import { IAuthUser } from "../../interfaces/auth.interface";
-import { IAddMoneyPayload } from "../wallet/wallet.service";
 import User from "../user/user.model";
 import httpStatus from "http-status-codes"
 import Wallet from "../wallet/wallet.model";
 import Transaction from "../transactions/transactions.model";
-interface IAgentCashInPayload extends IAddMoneyPayload {
-    receiverPhone: string;
-}
+import { IAgentCashInPayload, IAgentCashOutPayload } from "./agent.interface";
+
 const agentCashIn = async (
     payload: IAgentCashInPayload,
     authenticatedUser: IAuthUser
 ) => {
     const { receiverPhone, amount, note } = payload;
-
-    if (amount <= 0) {
-        throw new AppError(httpStatus.BAD_REQUEST, "Amount must be greater than 0");
-    }
-
     if (authenticatedUser.role !== "agent") {
         throw new AppError(httpStatus.FORBIDDEN, "Only agents can perform cash-in");
     }
-
     const session = await mongoose.startSession();
     session.startTransaction();
-
     try {
         // Find agent's wallet
         const agentWallet = await Wallet.findOne({ user: authenticatedUser._id }).session(session);
@@ -79,21 +70,13 @@ const agentCashIn = async (
     }
 };
 
-interface IAgentCashOutPayload {
-    userPhone: string;
-    amount: number;
-    note?: string;
-}
+
 
 export const agentCashOut = async (
     payload: IAgentCashOutPayload,
     authenticatedUser: IAuthUser
 ) => {
-    const { userPhone, amount, note } = payload;
-
-    if (amount <= 0) {
-        throw new AppError(httpStatus.BAD_REQUEST, "Amount must be greater than 0");
-    }
+    const { receiverPhone, amount, note } = payload;
     if (authenticatedUser.role !== "agent") {
         throw new AppError(httpStatus.FORBIDDEN, "Only agents can perform cash-out");
     }
@@ -104,13 +87,18 @@ export const agentCashOut = async (
         if (!agentWallet) {
             throw new AppError(httpStatus.NOT_FOUND, "Agent wallet not found");
         }
+        if (authenticatedUser.phone === receiverPhone) {
+            throw new AppError(httpStatus.BAD_REQUEST, "Agent cannot cash out from own account");
+        }
         if (agentWallet.isBlocked) {
             throw new AppError(httpStatus.FORBIDDEN, "Agent wallet is blocked");
         }
-        const user = await User.findOne({ phone: userPhone }).session(session);
+        const user = await User.findOne({ phone: receiverPhone }).session(session);
+
         if (!user) {
             throw new AppError(httpStatus.NOT_FOUND, "User not found");
         }
+
         const userWallet = await Wallet.findOne({ user: user._id }).session(session);
         if (!userWallet || userWallet.isBlocked) {
             throw new AppError(httpStatus.BAD_REQUEST, "User wallet is blocked or not found");

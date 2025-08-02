@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Sobuj\",\r\n    \"phone\": \"0184033389\",\r\n    \"email\": \"sdf৥ুাি\",\r\n    \"password\": \"1235\"\r\n  }",
+							"raw": "{\r\n    \"name\": \"altab\",\r\n    \"email\": \"altab@gmail.com\",\r\n    \"phone\": \"01745658699\",\r\n    \"password\": \"12345678\",\r\n    \"role\":\"user\"\r\n  }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n     \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -103,13 +103,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzc1MTIsImV4cCI6MTc1NDA0NDcxMn0.LSzrwUSYf6dmapBQ2yiWQC3Y7QdqPs0rhdGdEDUdGZY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2IwNTQ0YzA3ZDRhNjMyZmRjNTAiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQxMjU1NTIsImV4cCI6MTc1NDEzMjc1Mn0.80Eov52S72HtB_yCTjzL2FxG0OQHQQIRa8wVJm4m7OI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"receiverPhone\":\"01745895685\",\r\n    \"amount\":10\r\n}",
+							"raw": "{\r\n \"receiverPhone\": \"01745658699\",\r\n \"amount\": 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,13 +136,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzc1MTIsImV4cCI6MTc1NDA0NDcxMn0.LSzrwUSYf6dmapBQ2yiWQC3Y7QdqPs0rhdGdEDUdGZY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2IwNTQ0YzA3ZDRhNjMyZmRjNTAiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQxMjU1NTIsImV4cCI6MTc1NDEzMjc1Mn0.80Eov52S72HtB_yCTjzL2FxG0OQHQQIRa8wVJm4m7OI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"receiverPhone\":\"01745895685\",\r\n    \"amount\":10\r\n}",
+							"raw": "{\r\n\"receiverPhone\":\"01725689251\",\r\n\"amount\":10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -150,40 +150,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/agent/cash-in",
+							"raw": "{{BASE_URL}}/agent/withdraw",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"agent",
-								"cash-in"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"phone\": \"01740398196\",\r\n    \"password\": \"12345678\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/auth/login",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"auth",
-								"login"
+								"withdraw"
 							]
 						}
 					},
@@ -204,7 +177,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhiNDA0ZDJkM2ZmNWM1MGE2MjRiZWIiLCJlbWFpbCI6Imhhc2FuQGV4YW1wbGUuY29tIiwicGhvbmUiOiIwMTc0MDM5ODE5NiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUzOTc4MzUyLCJleHAiOjE3NTM5ODU1NTJ9.Paiq2LO_gp5fTILF6x8aa0KhwrqXtiKz4J5jCyrl7wo",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2IwNTQ0YzA3ZDRhNjMyZmRjNTAiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQxMjU1NTIsImV4cCI6MTc1NDEzMjc1Mn0.80Eov52S72HtB_yCTjzL2FxG0OQHQQIRa8wVJm4m7OI",
 								"type": "text"
 							}
 						],
@@ -245,7 +218,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhiNDA0ZDJkM2ZmNWM1MGE2MjRiZWIiLCJlbWFpbCI6Imhhc2FuQGV4YW1wbGUuY29tIiwicGhvbmUiOiIwMTc0MDM5ODE5NiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzUzOTc4MzUyLCJleHAiOjE3NTM5ODU1NTJ9.Paiq2LO_gp5fTILF6x8aa0KhwrqXtiKz4J5jCyrl7wo",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMjY2MDgsImV4cCI6MTc1NDEzMzgwOH0.Xw_CyeRIAp8LXflYaNN2rBFvw6-k8JM3kUUGfySzG_Q",
 								"type": "text"
 							}
 						],
@@ -259,13 +232,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/user/profile",
+							"raw": "{{BASE_URL}}/admin/users",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
-								"user",
-								"profile"
+								"admin",
+								"users"
 							]
 						}
 					},
@@ -281,7 +254,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMjY2MDgsImV4cCI6MTc1NDEzMzgwOH0.Xw_CyeRIAp8LXflYaNN2rBFvw6-k8JM3kUUGfySzG_Q",
 								"type": "text"
 							}
 						],
@@ -321,7 +294,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMjY2MDgsImV4cCI6MTc1NDEzMzgwOH0.Xw_CyeRIAp8LXflYaNN2rBFvw6-k8JM3kUUGfySzG_Q",
 								"type": "text"
 							}
 						],
@@ -335,14 +308,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/admin/agents/688d7b0544c07d4a632fdc50",
+							"raw": "{{BASE_URL}}/admin/agents/688d7d24cb6a885ee6a52fb5",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"admin",
 								"agents",
-								"688d7b0544c07d4a632fdc50"
+								"688d7d24cb6a885ee6a52fb5"
 							],
 							"query": [
 								{
@@ -365,7 +338,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMjY2MDgsImV4cCI6MTc1NDEzMzgwOH0.Xw_CyeRIAp8LXflYaNN2rBFvw6-k8JM3kUUGfySzG_Q",
 								"type": "text"
 							}
 						],
@@ -405,13 +378,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMDMxNjQsImV4cCI6MTc1NDExMDM2NH0.a1qC5jd5cqVESOk5SuIy3TUSuWSv3DdrdKBpUK9YSuQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2EzMTdkMDI2OGRiOGFhNzIwNGYiLCJlbWFpbCI6ImRpZ2l0YWwud2FsbGV0QGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxMjY2MDgsImV4cCI6MTc1NDEzMzgwOH0.Xw_CyeRIAp8LXflYaNN2rBFvw6-k8JM3kUUGfySzG_Q",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"block\":false // true or false\r\n}",
+							"raw": "{\r\n    \"block\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -498,7 +471,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzg2OTgsImV4cCI6MTc1NDA0NTg5OH0.XRjGUehObiyOQRpfp4wGN1sZDKSq91aZ6AmTUhQ5_xs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2QyNGNiNmE4ODVlZTZhNTJmYjUiLCJlbWFpbCI6InNvYnVqQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDU4Njk1ODYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDEyNDc5NCwiZXhwIjoxNzU0MTMxOTk0fQ.KHQFnGtjGOcSPsfPI1EG8C1TVGP1o8Q1QgISqROEVH4",
 								"type": "text"
 							}
 						],
@@ -518,13 +491,6 @@
 							],
 							"path": [
 								"wallet"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": null,
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -537,13 +503,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAzNTYzMCwiZXhwIjoxNzU0MDQyODMwfQ.F6mChYNmv_y2TnERkvJYhlSd7BdlxSrmWRrG0QMogH8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2QyNGNiNmE4ODVlZTZhNTJmYjUiLCJlbWFpbCI6InNvYnVqQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDU4Njk1ODYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDEyNDc5NCwiZXhwIjoxNzU0MTMxOTk0fQ.KHQFnGtjGOcSPsfPI1EG8C1TVGP1o8Q1QgISqROEVH4",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"amount\":30\r\n}",
+							"raw": "{\r\n\"amount\": 30\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -577,13 +543,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAxNDQxNiwiZXhwIjoxNzU0MDIxNjE2fQ.C7APyrptIHSIkS0ulR-YHQLmir_vORkVKPZzURscMUY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2QyNGNiNmE4ODVlZTZhNTJmYjUiLCJlbWFpbCI6InNvYnVqQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDU4Njk1ODYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDExNTY2NiwiZXhwIjoxNzU0MjAyMDY2fQ.oKgnTLR40ZBrgYR_JQcbvIdhNjsAAsCvZH5RqF8MV2E",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"receiverPhone\": \"01745895685\",\r\n    \"amount\": 5,\r\n  }",
+							"raw": "{\r\n    \"receiverPhone\": \"01745658699\",\r\n    \"amount\": 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -617,7 +583,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAzNTYzMCwiZXhwIjoxNzU0MDQyODMwfQ.F6mChYNmv_y2TnERkvJYhlSd7BdlxSrmWRrG0QMogH8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2QyNGNiNmE4ODVlZTZhNTJmYjUiLCJlbWFpbCI6InNvYnVqQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDU4Njk1ODYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDExNTY2NiwiZXhwIjoxNzU0MjAyMDY2fQ.oKgnTLR40ZBrgYR_JQcbvIdhNjsAAsCvZH5RqF8MV2E",
 								"type": "text"
 							}
 						],
@@ -649,37 +615,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "My Wallet",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjMjI0YWZmYWIwOWI4ZjEyODUwMTAiLCJlbWFpbCI6Imhhc2FuQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDAzOTgxOTYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDAxNDQxNiwiZXhwIjoxNzU0MDIxNjE2fQ.C7APyrptIHSIkS0ulR-YHQLmir_vORkVKPZzURscMUY",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/wallet/me",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"wallet",
-								"me"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -696,7 +631,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhjNzY4NGUzMTQ4OWEyNzNlMDM0MzgiLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSIsInBob25lIjoiMDE3MjU2ODkyNTEiLCJyb2xlIjoiYWdlbnQiLCJpYXQiOjE3NTQwMzYxMTYsImV4cCI6MTc1NDA0MzMxNn0.vBADg0GBwfNdFwy-svS9i3J4m2T_YAJcV_8ValH5tE4",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODhkN2QyNGNiNmE4ODVlZTZhNTJmYjUiLCJlbWFpbCI6InNvYnVqQGdtYWlsLmNvbSIsInBob25lIjoiMDE3NDU4Njk1ODYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDEyNDc5NCwiZXhwIjoxNzU0MTMxOTk0fQ.KHQFnGtjGOcSPsfPI1EG8C1TVGP1o8Q1QgISqROEVH4",
 								"type": "text"
 							}
 						],

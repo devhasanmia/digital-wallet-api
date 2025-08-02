@@ -28,7 +28,7 @@ const getAllWallets = async () => {
 };
 
 const toggleWalletBlock = async (walletId: string, block: boolean) => {
-  const wallet = await Wallet.findById(walletId);
+  const wallet = await Wallet.findById(walletId).populate("user", "name phone role");
   if (!wallet) {
     throw new AppError(404, "Wallet not found");
   }
@@ -45,14 +45,14 @@ const updateAgentStatus = async (
   status: string
 ) => {
   const validStatuses = ["approved", "rejected"];
+  
   if (!validStatuses.includes(status)) {
     throw new AppError(
       400, 
       `Invalid status value. Allowed values are: ${validStatuses.join(", ")}`
     );
   }
-
-  const agent = await User.findOne({ _id: agentId, role: "agent" });
+  const agent = await User.findOne({ _id: agentId, role: "agent" }).select('-password');
   if (!agent) {
     throw new AppError(404, "Agent not found");
   }
