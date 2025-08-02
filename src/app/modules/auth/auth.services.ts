@@ -11,6 +11,9 @@ const register = async (payload: IUser) => {
     const session = await mongoose.startSession();
     session.startTransaction();
     try {
+        if (payload.role === 'admin') {
+            throw new AppError(403, "Cannot register with admin role");
+        }
         const isExist = await User.findOne({ phone: payload.phone }).session(session);
         if (isExist) {
             throw new AppError(409, "User already exists with this phone number");

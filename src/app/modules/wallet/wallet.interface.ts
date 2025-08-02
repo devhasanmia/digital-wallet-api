@@ -10,7 +10,7 @@ export interface IWallet {
 export interface ISendMoneyPayload {
     receiverPhone: string;
     amount: number;
-    note: string
+    note?: string
 }
 
 export interface IWithdrawToAgentPayload {

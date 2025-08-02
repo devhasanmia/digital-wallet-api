@@ -21,10 +21,11 @@ const SendMoney = catchAsync(async (req: Request, res: Response, next: NextFunct
     sendResponse(res, {
         statusCode: 200,
         success: true,
-        message: "Wallet fetched successfully",
+        message: "Send Money successfully",
         data,
     });
 })
+
 const getMyTransactions = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const authenticatedUser = req.user;
     const data = await WalletService.getMyTransactions(authenticatedUser as IAuthUser)
