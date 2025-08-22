@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Polling App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Container -->
+  <div class="max-w-2xl mx-auto py-10 px-4">
+
+    <!-- Poll Box -->
+    <div class="bg-white rounded-2xl shadow-md p-6">
+      <h2 class="text-2xl font-bold mb-4">🚀 Which JavaScript Framework Do You Prefer?</h2>
+
+      <!-- Option 1 -->
+      <div class="mb-4">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium text-gray-700">React</span>
+          <span class="text-sm font-medium text-gray-700">45%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-blue-500 h-4 rounded-full" style="width: 45%"></div>
+        </div>
+      </div>
+
+      <!-- Option 2 -->
+      <div class="mb-4">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium text-gray-700">Vue</span>
+          <span class="text-sm font-medium text-gray-700">30%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-green-500 h-4 rounded-full" style="width: 30%"></div>
+        </div>
+      </div>
+
+      <!-- Option 3 -->
+      <div class="mb-4">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-medium text-gray-700">Angular</span>
+          <span class="text-sm font-medium text-gray-700">25%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+          <div class="bg-red-500 h-4 rounded-full" style="width: 25%"></div>
+        </div>
+      </div>
+
+      <!-- Vote Button -->
+      <button class="mt-6 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition">
+        Vote Now
+      </button>
+    </div>
+
+    <!-- Poll Create Form -->
+    <div class="bg-white rounded-2xl shadow-md p-6 mt-10">
+      <h3 class="text-xl font-bold mb-4">📝 Create a New Poll</h3>
+      <form class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Poll Question</label>
+          <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="Enter your poll question..." />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Options (comma separated)</label>
+          <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="React, Vue, Angular" />
+        </div>
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg">
+          Create Poll
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
