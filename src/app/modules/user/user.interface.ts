@@ -1,4 +1,3 @@
-import { Types } from "mongoose";
 
 type Role = 'user' | 'agent' | 'admin';
 
@@ -10,7 +9,7 @@ export interface IUser {
     phone: string;
     password: string;
     role: Role;
-    // wallet: Types.ObjectId
+    picture?: string;
     approvalStatus?: ApprovalStatus;
     isBlocked: boolean;
 }

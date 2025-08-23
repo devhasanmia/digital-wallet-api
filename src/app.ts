@@ -8,18 +8,22 @@ import { router } from './app/routes';
 import cookieParser from "cookie-parser";
 const app = express()
 
-app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors({
+    origin: "http://localhost:5173", // তোমার frontend port
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    credentials: true,
+}));
 
 app.use('/api/v1', router)
 
 
 app.get("/", (req: Request, res: Response) => {
-  const html = `
+    const html = `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -132,7 +136,7 @@ app.get("/", (req: Request, res: Response) => {
   </body>
   </html>
   `;
-  res.send(html);
+    res.send(html);
 });
 
 app.use(globalErrorHandler)

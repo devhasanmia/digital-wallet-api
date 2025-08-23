@@ -15,9 +15,20 @@ const profile = catchAsync(async (req: Request, res: Response, next: NextFunctio
     });
 });
 
-
+const UpdateProfile = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const authenticatedUser = req.user;
+    const paylod = req.body;
+    const data = await UserServices.updateProfile(authenticatedUser as IAuthUser, paylod);
+    sendResponse(res, {
+        statusCode: 200,
+        success: true,
+        message: "Profile Updated successfully",
+        data,
+    });
+});
 
 
 export const UserController = {
-    profile
+    profile,
+    UpdateProfile
 };

@@ -25,6 +25,10 @@ const userSchema = new Schema<IUser>({
         enum: ['user', 'agent', 'admin'],
         required: true
     },
+    picture: {
+        type: String,
+        default: "https://res.cloudinary.com/deicntkum/image/upload/v1755900488/man-user-circle-icon_wrrmd6.png"
+    },
     approvalStatus: {
         type: String,
         enum: ['pending', 'approved', 'rejected'],
