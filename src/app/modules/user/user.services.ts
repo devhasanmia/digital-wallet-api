@@ -2,7 +2,6 @@ import { IAuthUser } from "../../interfaces/auth.interface";
 import User from "./user.model";
 import bcrypt from "bcrypt";
 
-
 const profile = async (authenticatedUser: IAuthUser) => {
     try {
         const result = User.findById(authenticatedUser._id).select('-password')
