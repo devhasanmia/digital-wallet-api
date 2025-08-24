@@ -21,6 +21,9 @@ const userBlockToggle = async (id: string) => {
     { isBlocked: !user.isBlocked },
     { new: true }
   ).select("-password");
+  await Wallet.findOneAndUpdate(
+    { user: id },
+    { isBlocked: !user.isBlocked })
   return updatedUser;
 };
 
