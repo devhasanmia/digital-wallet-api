@@ -11,6 +11,19 @@ const getAllUser = async () => {
   return users;
 };
 
+const userBlockToggle = async (id: string) => {
+  const user = await User.findById(id);
+  if (!user) {
+    throw new AppError(404, "User not found");
+  }
+  const updatedUser = await User.findByIdAndUpdate(
+    id,
+    { isBlocked: !user.isBlocked },
+    { new: true }
+  ).select("-password");
+  return updatedUser;
+};
+
 const getAllAgent = async () => {
   const agents = await User.find({ role: "agent" }).select("-password");
   if (!agents.length) {
@@ -28,7 +41,10 @@ const getAllWallets = async () => {
 };
 
 const toggleWalletBlock = async (walletId: string, block: boolean) => {
-  const wallet = await Wallet.findById(walletId).populate("user", "name phone role");
+  const wallet = await Wallet.findById(walletId).populate(
+    "user",
+    "name phone role"
+  );
   if (!wallet) {
     throw new AppError(404, "Wallet not found");
   }
@@ -40,19 +56,18 @@ const toggleWalletBlock = async (walletId: string, block: boolean) => {
   };
 };
 
-const updateAgentStatus = async (
-  agentId: string,
-  status: string
-) => {
+const updateAgentStatus = async (agentId: string, status: string) => {
   const validStatuses = ["approved", "rejected"];
-  
+
   if (!validStatuses.includes(status)) {
     throw new AppError(
-      400, 
+      400,
       `Invalid status value. Allowed values are: ${validStatuses.join(", ")}`
     );
   }
-  const agent = await User.findOne({ _id: agentId, role: "agent" }).select('-password');
+  const agent = await User.findOne({ _id: agentId, role: "agent" }).select(
+    "-password"
+  );
   if (!agent) {
     throw new AppError(404, "Agent not found");
   }
@@ -66,17 +81,16 @@ const updateAgentStatus = async (
   };
 };
 
-
 const getAllTransactions = async () => {
-  const transactions = await Transaction.find().populate("from to", "name phone");
+  const transactions = await Transaction.find().populate(
+    "from to",
+    "name phone"
+  );
   if (!transactions.length) {
     throw new AppError(404, "No transactions found");
   }
   return transactions;
 };
-
-
-
 
 export const AdminServices = {
   getAllUser,
@@ -85,4 +99,5 @@ export const AdminServices = {
   getAllTransactions,
   toggleWalletBlock,
   updateAgentStatus,
+  userBlockToggle
 };

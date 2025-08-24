@@ -10,5 +10,6 @@ router.patch("/agents/:agentId", checkAuth("admin"), AdminController.updateAgent
 router.get("/wallets", checkAuth("admin"), AdminController.getAllWallets);
 router.patch("/wallets/:walletId/block", checkAuth("admin"), AdminController.toggleWalletBlock);
 router.get("/transactions", checkAuth("admin"), AdminController.getAllTransactions);
+router.get("/users/:userId", checkAuth("admin"), AdminController.userBlockToggle);
 
 export const AdminRoutes = router;

@@ -72,13 +72,14 @@ const toggleWalletBlock = catchAsync(
   }
 );
 
-
-
 const updateAgentStatus = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { agentId } = req.params;
     const { approvalStatus } = req.body;
-    const result = await AdminServices.updateAgentStatus(agentId, approvalStatus);
+    const result = await AdminServices.updateAgentStatus(
+      agentId,
+      approvalStatus
+    );
     sendResponse(res, {
       statusCode: 200,
       success: true,
@@ -88,8 +89,18 @@ const updateAgentStatus = catchAsync(
   }
 );
 
-
-
+const userBlockToggle = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { userId } = req.params;
+    const result = await AdminServices.userBlockToggle(userId);
+    sendResponse(res, {
+      statusCode: 200,
+      success: true,
+      message: "User Update Success",
+      data: result,
+    });
+  }
+);
 
 export const AdminController = {
   getAllUser,
@@ -98,4 +109,5 @@ export const AdminController = {
   getAllTransactions,
   toggleWalletBlock,
   updateAgentStatus,
+  userBlockToggle
 };
