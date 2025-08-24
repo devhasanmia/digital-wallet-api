@@ -28,7 +28,7 @@ const register = async (payload: IUser) => {
         }], { session });
         await Wallet.create([{
             user: createdUser[0]._id,
-            balance: 50,
+            balance: 100,
             isBlocked: false,
         }], { session });
         await session.commitTransaction();
@@ -49,13 +49,20 @@ const login = async (payload: Partial<IUser>) => {
     if (!user) {
         throw new AppError(
             httpStatus.NOT_FOUND,
-            "User with this phone does not exist"
+            "Incorrect password or phone number"
         );
     }
     const isPasswordValid = await bcrypt.compare(password as string, user.password);
     if (!isPasswordValid) {
-        throw new AppError(httpStatus.UNAUTHORIZED, "Incorrect password");
+        throw new AppError(httpStatus.UNAUTHORIZED, "Incorrect password or phone number");
     }
+    if (user.isBlocked) {
+        throw new AppError(httpStatus.FORBIDDEN, "Your account has been blocked, please contact support");
+    }
+    if (user.role === 'agent' && user.approvalStatus !== 'approved') {
+        throw new AppError(httpStatus.FORBIDDEN, `Your agent account is ${user.approvalStatus}. Please contact support for more information.`);
+    }
+ 
     const userToken = createUserToken(user as any);
     return {
         accessToken: userToken.accessToken,

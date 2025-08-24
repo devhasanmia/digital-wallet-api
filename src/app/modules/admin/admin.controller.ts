@@ -75,11 +75,7 @@ const toggleWalletBlock = catchAsync(
 const updateAgentStatus = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { agentId } = req.params;
-    const { approvalStatus } = req.body;
-    const result = await AdminServices.updateAgentStatus(
-      agentId,
-      approvalStatus
-    );
+    const result = await AdminServices.updateAgentStatus(agentId);
     sendResponse(res, {
       statusCode: 200,
       success: true,

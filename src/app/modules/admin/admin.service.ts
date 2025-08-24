@@ -58,31 +58,21 @@ const toggleWalletBlock = async (walletId: string, block: boolean) => {
     wallet,
   };
 };
-
-const updateAgentStatus = async (agentId: string, status: string) => {
-  const validStatuses = ["approved", "rejected"];
-
-  if (!validStatuses.includes(status)) {
-    throw new AppError(
-      400,
-      `Invalid status value. Allowed values are: ${validStatuses.join(", ")}`
-    );
-  }
-  const agent = await User.findOne({ _id: agentId, role: "agent" }).select(
-    "-password"
-  );
-  if (!agent) {
+const updateAgentStatus = async (agentId: string) => {
+  // toggle between 'approved' and 'rejected
+  const agent = await User.findById(agentId);
+  if (!agent || agent.role !== "agent") {
     throw new AppError(404, "Agent not found");
   }
-
-  agent.approvalStatus = status as "approved" | "rejected";
+  agent.approvalStatus =
+    agent.approvalStatus === "approved" ? "rejected" : "approved";
   await agent.save();
-
   return {
-    message: `Agent account has been ${status}`,
-    agent,
-  };
+    message: `Agent has been ${agent.approvalStatus}`,
+    agent
+  }
 };
+
 
 const getAllTransactions = async () => {
   const transactions = await Transaction.find().populate(
