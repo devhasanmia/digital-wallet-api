@@ -4,31 +4,37 @@ import { sendResponse } from "../../utils/sendResponse";
 import { UserServices } from "./user.services";
 import { IAuthUser } from "../../interfaces/auth.interface";
 
-const profile = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+const profile = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const authenticatedUser = req.user;
     const data = await UserServices.profile(authenticatedUser as IAuthUser);
     sendResponse(res, {
-        statusCode: 200,
-        success: true,
-        message: "Profile fetched successfully",
-        data,
+      statusCode: 200,
+      success: true,
+      message: "Profile fetched successfully",
+      data,
     });
-});
+  }
+);
 
-const UpdateProfile = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+const UpdateProfile = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const authenticatedUser = req.user;
     const paylod = req.body;
-    const data = await UserServices.updateProfile(authenticatedUser as IAuthUser, paylod);
+    const data = await UserServices.updateProfile(
+      authenticatedUser as IAuthUser,
+      paylod
+    );
     sendResponse(res, {
-        statusCode: 200,
-        success: true,
-        message: "Profile Updated successfully",
-        data,
+      statusCode: 200,
+      success: true,
+      message: "Profile Updated successfully",
+      data,
     });
-});
-
+  }
+);
 
 export const UserController = {
-    profile,
-    UpdateProfile
+  profile,
+  UpdateProfile,
 };
