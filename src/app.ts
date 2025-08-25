@@ -1,29 +1,27 @@
-import express, { Request, Response } from 'express'
-import cors from "cors"
-import helmet from 'helmet';
-import morgan from 'morgan';
-import { globalErrorHandler } from './app/middlewares/globalErrorHandler';
-import notFound from './app/middlewares/notFound';
-import { router } from './app/routes';
+import express, { Request, Response } from "express";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+import { globalErrorHandler } from "./app/middlewares/globalErrorHandler";
+import notFound from "./app/middlewares/notFound";
+import { router } from "./app/routes";
 import cookieParser from "cookie-parser";
-const app = express()
+const app = express();
 
 app.use(helmet());
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://digital-wallet-mu.vercel.app",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    credentials: true,
+  origin: "https://digital-wallet-mu.vercel.app",
+  credentials: true,
 }));
 
-app.use('/api/v1', router)
-
+app.use("/api/v1", router);
 
 app.get("/", (req: Request, res: Response) => {
-    const html = `
+  const html = `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -136,9 +134,9 @@ app.get("/", (req: Request, res: Response) => {
   </body>
   </html>
   `;
-    res.send(html);
+  res.send(html);
 });
 
-app.use(globalErrorHandler)
+app.use(globalErrorHandler);
 app.use(notFound);
-export default app
+export default app;
