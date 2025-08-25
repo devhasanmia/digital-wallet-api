@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-  origin: "https://digital-wallet-mu.vercel.app",
+  origin: "https://golden-smakager-4a0ad0.netlify.app",
   credentials: true,
 }));
 
