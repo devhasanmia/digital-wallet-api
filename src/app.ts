@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-  origin: "https://golden-smakager-4a0ad0.netlify.app",
+  origin: "https://digital-wallet-dev.netlify.app",
   credentials: true,
 }));
 
